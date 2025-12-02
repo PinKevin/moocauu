@@ -271,7 +271,13 @@ body {
 
 .about .row {
   display: flex;
+  justify-content: center;
 }
+
+.about .about-video {
+  border-radius: 50% ;
+}
+
 
 .about .row .about-img {
   flex: 1 1 45rem;
@@ -312,6 +318,7 @@ body {
 .contact h2 {
   margin-bottom: 1rem;
 }
+
 .menu p,
 .products p,
 .contact p {
@@ -320,6 +327,7 @@ body {
   margin: auto;
   font-weight: 100;
   line-height: 1.6;
+  font-size: medium;
 }
 
 .menu .row {
@@ -332,21 +340,25 @@ body {
 .menu .row .menu-card {
   text-align: center;
   padding-bottom: 4rem;
+  width: 40%;
 }
 
 .menu .row .menu-card img {
   border-radius: 50%;
-  width: 80%;
+  width: 40%;
 }
 
 .menu .row .menu-card .menu-card-title {
   margin: 1rem auto 0.5rem;
+  font-size: large;
 }
 
 /* Products Section */
 .products .row {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  /* grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr)); */
+  justify-content: center;
   gap: 1.5rem;
   margin-top: 4rem;
 }
@@ -395,11 +407,15 @@ body {
 .products .product-stars {
   font-size: 1.7rem;
   padding: 0.8rem;
-  color: var(--primary);
+  color: white;
 }
 
 .products .product-stars .star-full {
-  fill: var(--primary);
+  fill: white;
+}
+
+.products .product-stars .star-half {
+  fill: url(#half-fill);
 }
 
 .products .product-price {
@@ -590,7 +606,7 @@ footer .credit a {
     position: absolute;
     top: 100%;
     right: -100%;
-    background-color: #fff;
+    background-color: var(--primary);
     width: 30rem;
     height: 100vh;
     transition: 0.3s;
@@ -629,6 +645,7 @@ footer .credit a {
     height: 24rem;
     object-fit: cover;
     object-position: center;
+    mask-size: 40%;
   }
 
   .about .row .content {
